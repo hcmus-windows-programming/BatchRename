@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BatchRename"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="My Rename" Height="450" Width="800">
+    <Canvas>
+        <Button Content="Start Batch" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="72" Canvas.Left="707" Canvas.Top="62"/>
+        <Label Content="Renaming rules list" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add rules" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="19" Canvas.Top="90"/>
+        <Button x:Name="addFileButton" Canvas.Left="376" Canvas.Top="57" Click= "addFileButton_Click" RenderTransformOrigin="1.088,0.809" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="addFolderButton" Click="addFolderButton_Click" Canvas.Left="422" Canvas.Top="57" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
-    </Grid>
+        <ListView x:Name="sourceListView" Width="403" Height="300" Canvas.Left="376" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Canvas>
 </Window>

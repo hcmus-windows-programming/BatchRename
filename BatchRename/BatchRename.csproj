@@ -11,10 +11,15 @@
   <ItemGroup>
     <None Remove="addFiles.png" />
     <None Remove="addFolder.png" />
+    <None Remove="Icons\addFiles.png" />
+    <None Remove="Icons\addFolder.png" />
+    <None Remove="Icons\play.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Icons\id.ico" />
+    <Resource Include="Icons\id.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +30,15 @@
   <ItemGroup>
     <Resource Include="addFiles.png" />
     <Resource Include="addFolder.png" />
+    <Resource Include="Icons\addFiles.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\addFolder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\play.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

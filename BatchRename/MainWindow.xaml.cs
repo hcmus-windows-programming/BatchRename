@@ -103,8 +103,10 @@ namespace BatchRename
                 foreach (string sFileName in dialog.FileNames)
                 {
                     Objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
-                    for (int i = 0; i < Objects.Count; i++){
-                        for (int j = i + 1; j < Objects.Count; j++){
+                    for (int i = 0; i < Objects.Count; i++)
+                    {
+                        for (int j = i + 1; j < Objects.Count; j++)
+                        {
                             if (Objects[i].Name == Objects[j].Name)
                                 Objects.Remove(Objects[j]);
                         }
@@ -116,6 +118,11 @@ namespace BatchRename
                     }
                 }
             }
+        }
+
+        private void playBatchButton_Click(object sender, RoutedEventArgs e)
+        {
+             
         }
     }
 }

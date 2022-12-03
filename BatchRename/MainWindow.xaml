@@ -5,32 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BatchRename"
         mc:Ignorable="d"
-        Title="My Rename" Height="450" Width="800">
-    <Canvas>
-        <Button Content="Start Batch" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="72" Canvas.Left="707" Canvas.Top="62"/>
-        <Label Content="Renaming rules list" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>
-        <Button Content="Add rules" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="19" Canvas.Top="90"/>
-        <Button x:Name="addFileButton" Canvas.Left="376" Canvas.Top="57" Click= "addFileButton_Click" RenderTransformOrigin="1.088,0.809" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-        <Button x:Name="addFolderButton" Click="addFolderButton_Click" Canvas.Left="422" Canvas.Top="57" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30">
-            <Button.Template>
-                <ControlTemplate>
-                    <Image Source="/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
-                </ControlTemplate>
-            </Button.Template>
+        Title="My Rename" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "100" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="3" Grid.Row="0" x:Name="playBatchButton" Height="30" Width="88" Click="playBatchButton_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Icons/play.png" Height="14" Width="17"/>
+                <TextBlock Text="Start Batch" FontWeight="Bold" />
+            </StackPanel>
         </Button>
 
-        <ListView x:Name="sourceListView" Width="403" Height="300" Canvas.Left="376" Canvas.Top="100" HorizontalAlignment="Left" VerticalAlignment="Center">
+        <Label Content="Renaming rules list" Margin="95,69,95,5"/>
+        <!--<Button Content="Add rules" Margin="89,10,89,300"></Button>-->
+        
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button x:Name="addFileButton" Click= "addFileButton_Click" Width="55" Height="30">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Icons/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="addFolderButton" Click="addFolderButton_Click" Width="55" Height="30">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Icons/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <ListView Grid.Column="1" Grid.ColumnSpan="2" x:Name="sourceListView" Margin="10,86,6,10" Grid.RowSpan="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Canvas>
+
+    </Grid>
 </Window>

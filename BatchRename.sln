@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchRename", "BatchRename\BatchRename.csproj", "{B6800288-A577-4B25-BFA7-D752BD083527}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchRename", "BatchRename\BatchRename.csproj", "{B6800288-A577-4B25-BFA7-D752BD083527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRuleLib", "IRule\IRuleLib.csproj", "{A608C360-D99C-4916-B95F-51BD957CDC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchRenameAddPrefixRuleLib", "BatchRenameAddPrefixRuleLib\BatchRenameAddPrefixRuleLib.csproj", "{EB6310C7-FCC1-4DA6-9916-801050066A5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{B6800288-A577-4B25-BFA7-D752BD083527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6800288-A577-4B25-BFA7-D752BD083527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6800288-A577-4B25-BFA7-D752BD083527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A608C360-D99C-4916-B95F-51BD957CDC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A608C360-D99C-4916-B95F-51BD957CDC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A608C360-D99C-4916-B95F-51BD957CDC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A608C360-D99C-4916-B95F-51BD957CDC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6310C7-FCC1-4DA6-9916-801050066A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6310C7-FCC1-4DA6-9916-801050066A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6310C7-FCC1-4DA6-9916-801050066A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6310C7-FCC1-4DA6-9916-801050066A5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

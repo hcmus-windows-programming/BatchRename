@@ -4,6 +4,27 @@
              xmlns:local="clr-namespace:BatchRename"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<!--Basic Material Design theme-->
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+				
+				<!--Material Design color-->
+				<ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Cyan.xaml" />
+
+				<!--BatchRename resource-->
+				<ResourceDictionary>
+					<!--Override Material Design theme-->
+					<SolidColorBrush x:Key="PrimaryHueLightBrush" Color="{StaticResource Primary300}"/>
+					<SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="{StaticResource Primary300Foreground}"/>
+					<SolidColorBrush x:Key="PrimaryHueMidBrush" Color="{StaticResource Primary500}"/>
+					<SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500Foreground}"/>
+					<SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
+					<SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

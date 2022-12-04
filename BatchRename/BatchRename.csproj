@@ -32,7 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BatchRenameAddPrefixRuleLib\BatchRenameAddPrefixRuleLib.csproj" />
-    <ProjectReference Include="..\IRule\IRuleLib.csproj" />
+    <ProjectReference Include="..\IRuleLib\IRuleLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>

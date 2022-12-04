@@ -150,8 +150,6 @@ namespace BatchRename
 		{
 			var menuItem = sender as MenuItem;
 
-			Console.WriteLine(menuItem.Header);
-
 			if (menuItem != null)
 			{
 				_activeRules.Add(new AddPrefixRule() { Prefix = "CV" });
@@ -160,8 +158,6 @@ namespace BatchRename
 				converter.Rules = _activeRules;
 
 				var temp = new ObservableCollection<Object>();
-
-
 
 				foreach (var file in Objects)
 				{
@@ -201,6 +197,7 @@ namespace BatchRename
 				ContextMenu? contextMenu = FindResource("renamingRulesContextMenu") as ContextMenu;
 				var menuItem = new MenuItem();
 				menuItem.Header = rule.Label;
+				menuItem.Click += menuItemRenamingRulesContextMenu_Click;
 				contextMenu!.Items.Add(menuItem);
 			}
 		}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tCmidMb1Z0vlRHBCusZ82nImcv5SlvL72SS2fTQRDGq4b74L6OtcoPU1IuDz0bBEbP7J8JXCyDfG1k3fhR8DLA==",
+  "success": true,
+  "projectFilePath": "D:\\Lập trình Window\\Project_01\\DynamicBatchRename\\Contract\\Contract.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -14,7 +14,9 @@
     <None Remove="Icons\add.png" />
     <None Remove="Icons\addFiles.png" />
     <None Remove="Icons\addFolder.png" />
+    <None Remove="Icons\no.png" />
     <None Remove="Icons\play.png" />
+    <None Remove="Icons\trash.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,7 +46,11 @@
     <Resource Include="Icons\addFolder.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icons\no.png" />
     <Resource Include="Icons\play.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\trash.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

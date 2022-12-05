@@ -73,6 +73,7 @@ namespace BatchRename
 		}
 
 		ObservableCollection<Object> Objects = new ObservableCollection<Object>();
+		ObservableCollection<IRule> _selectedRules = new ObservableCollection<IRule>();
 		List<IRule> _activeRules = new List<IRule>();
 		List<IRule> _rules = new List<IRule>();
 
@@ -99,7 +100,6 @@ namespace BatchRename
 					}
 
 					sourceListView.ItemsSource = Objects;
-					previewListView.ItemsSource = Objects;
 				}
 			}
 		}
@@ -152,7 +152,10 @@ namespace BatchRename
 
 			if (menuItem != null)
 			{
-				_activeRules.Add(new AddPrefixRule() { Prefix = "CV" });
+				IRule newRule = new AddPrefixRule() { Prefix = "CV" };
+				_activeRules.Add(newRule);
+				_selectedRules.Add(newRule);	
+				selectedRules.ItemsSource = _selectedRules;
 
 				var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
 				converter.Rules = _activeRules;
@@ -165,7 +168,6 @@ namespace BatchRename
 				}
 
 				Objects = temp;
-				previewListView.ItemsSource = Objects;
 			}
 		}
 
@@ -200,6 +202,11 @@ namespace BatchRename
 				menuItem.Click += menuItemRenamingRulesContextMenu_Click;
 				contextMenu!.Items.Add(menuItem);
 			}
+		}
+
+		private void removeRule_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }

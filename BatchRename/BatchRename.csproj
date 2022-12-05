@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
@@ -11,20 +11,30 @@
   <ItemGroup>
     <None Remove="addFiles.png" />
     <None Remove="addFolder.png" />
+    <None Remove="Icons\add.png" />
     <None Remove="Icons\addFiles.png" />
     <None Remove="Icons\addFolder.png" />
+    <None Remove="Icons\no.png" />
     <None Remove="Icons\play.png" />
+    <None Remove="Icons\trash.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icons\add.png" />
     <Resource Include="Icons\id.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
     <PackageReference Include="Microsoft-WindowsAPICodePack-Core" Version="1.1.4" />
     <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BatchRenameAddPrefixRuleLib\BatchRenameAddPrefixRuleLib.csproj" />
+    <ProjectReference Include="..\IRuleLib\IRuleLib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +46,11 @@
     <Resource Include="Icons\addFolder.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Icons\no.png" />
     <Resource Include="Icons\play.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\trash.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

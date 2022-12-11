@@ -7,6 +7,8 @@ namespace AllSpace
     {
         public string Name => "AllSpace";
 
+        public string Label => "Delete all space";
+
         public object Clone()
         {
             return MemberwiseClone();

@@ -5,11 +5,13 @@ namespace AddSuffixRule
 {
     public class AddSuffix : IRule
     {
-            public string Suffix { get; set; }
+        public string Suffix { get; set; }
 
-            public string Name => "AddSuffix";
+        public string Name => "AddSuffix";
 
-            public AddSuffix()
+        public string Label => "Add suffix";
+
+        public AddSuffix()
             {
                 Suffix = "";
             }

@@ -5,5 +5,6 @@
         string Rename(string origin);
         IRule? Parse(string data);
         string Name { get; }
+        string Label { get; }
     }
 }

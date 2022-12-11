@@ -6,6 +6,8 @@ namespace AddCurrentMonth
     {
         public string Name => "AddCurrentMonth";
 
+        public string Label => "Add current month";
+
         public object Clone()
         {
             return MemberwiseClone();

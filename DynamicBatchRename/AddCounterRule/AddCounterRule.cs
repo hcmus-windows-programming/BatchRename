@@ -22,6 +22,8 @@ namespace AddCounterRule
         
         public string Name => "AddCounter";
 
+        public string Label => "Add counter";
+
         public AddCounterRule()
         {
             Start = 1;

@@ -10,6 +10,8 @@ namespace RemoveSpecialCharsRule
 
         public string Name => "RemoveSpecialChars";
 
+        public string Label => "Remove special chars";
+
         public RemoveSpecialCharsRule()
         {
             SpecialChars = new List<string>();

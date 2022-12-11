@@ -7,6 +7,8 @@ namespace OneSpaceRule
     {
         public string Name => "OneSpace";
 
+        public string Label => "One space";
+
         public object Clone()
         {
             return MemberwiseClone();

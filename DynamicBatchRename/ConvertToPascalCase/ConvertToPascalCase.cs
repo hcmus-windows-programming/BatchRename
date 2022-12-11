@@ -8,6 +8,8 @@ namespace ConvertToPascalCase
     {
         public string Name => "ConvertToPascalCase";
 
+        public string Label => "Convert to Pascal Case";
+
         public object Clone()
         {
             return MemberwiseClone();

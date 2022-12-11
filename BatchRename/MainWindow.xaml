@@ -110,11 +110,19 @@
 		</ListView>
 
 		<ListView Grid.Column="1" Grid.ColumnSpan="2" x:Name="sourceListView" Margin="10"  Grid.Row="2">
-			<ListView.ItemTemplate>
+			<!--<ListView.ItemTemplate>
 				<DataTemplate>
 					<TextBlock Text="{Binding Name}" />
 				</DataTemplate>
-			</ListView.ItemTemplate>
+			</ListView.ItemTemplate>-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding NewName}"/>
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                </GridView>
+            </ListView.View>
+            
 		</ListView>
 	</Grid>
 </Window>

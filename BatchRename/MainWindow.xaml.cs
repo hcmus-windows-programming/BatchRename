@@ -175,7 +175,7 @@ namespace BatchRename
 		{
 			var exeFolder = AppDomain.CurrentDomain.BaseDirectory;
 			var folderInfo = new DirectoryInfo(exeFolder);
-			var dllFiles = folderInfo.GetFiles("*RuleLib.dll");
+			var dllFiles = folderInfo.GetFiles("BatchRename*RuleLib.dll");
 
 			foreach (var dll in dllFiles)
 			{
@@ -206,7 +206,7 @@ namespace BatchRename
 
 		private void removeRule_Click(object sender, RoutedEventArgs e)
 		{
-
-		}
+            
+        }
 	}
 }

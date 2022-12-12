@@ -1,0 +1,176 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DynamicBatchRename/1.0.0": {
+        "dependencies": {
+          "AddCounterRule": "1.0.0",
+          "AddCurrentMonth": "1.0.0",
+          "AddPrefixRule": "1.0.0",
+          "AddSuffixRule": "1.0.0",
+          "AllSpace": "1.0.0",
+          "ChangeExtension": "1.0.0",
+          "Contract": "1.0.0",
+          "ConvertToLowcase": "1.0.0",
+          "ConvertToPascalCase": "1.0.0",
+          "OneSpaceRule": "1.0.0",
+          "RemoveSpecialCharsRule": "1.0.0"
+        },
+        "runtime": {
+          "DynamicBatchRename.dll": {}
+        }
+      },
+      "AddCounterRule/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "AddCounterRule.dll": {}
+        }
+      },
+      "AddCurrentMonth/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "AddCurrentMonth.dll": {}
+        }
+      },
+      "AddPrefixRule/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "AddPrefixRule.dll": {}
+        }
+      },
+      "AddSuffixRule/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "AddSuffixRule.dll": {}
+        }
+      },
+      "AllSpace/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "AllSpace.dll": {}
+        }
+      },
+      "ChangeExtension/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "ChangeExtension.dll": {}
+        }
+      },
+      "Contract/1.0.0": {
+        "runtime": {
+          "Contract.dll": {}
+        }
+      },
+      "ConvertToLowcase/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "ConvertToLowcase.dll": {}
+        }
+      },
+      "ConvertToPascalCase/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "ConvertToPascalCase.dll": {}
+        }
+      },
+      "OneSpaceRule/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "OneSpaceRule.dll": {}
+        }
+      },
+      "RemoveSpecialCharsRule/1.0.0": {
+        "dependencies": {
+          "Contract": "1.0.0"
+        },
+        "runtime": {
+          "RemoveSpecialCharsRule.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DynamicBatchRename/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AddCounterRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AddCurrentMonth/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AddPrefixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AddSuffixRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AllSpace/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ChangeExtension/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Contract/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConvertToLowcase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConvertToPascalCase/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OneSpaceRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RemoveSpecialCharsRule/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

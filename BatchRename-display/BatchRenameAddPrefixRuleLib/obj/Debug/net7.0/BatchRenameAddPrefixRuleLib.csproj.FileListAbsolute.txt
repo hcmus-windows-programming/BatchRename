@@ -1,0 +1,30 @@
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.deps.json
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.pdb
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\IRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\IRuleLib.pdb
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.AssemblyInfo.cs
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.CopyComplete
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\refint\BatchRenameAddPrefixRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.pdb
+C:\Users\ADMIN\Downloads\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\ref\BatchRenameAddPrefixRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.deps.json
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\BatchRenameAddPrefixRuleLib.pdb
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\IRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\bin\Debug\net7.0\IRuleLib.pdb
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.AssemblyReference.cache
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.AssemblyInfoInputs.cache
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.AssemblyInfo.cs
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.CoreCompileInputs.cache
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.csproj.CopyComplete
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\refint\BatchRenameAddPrefixRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\BatchRenameAddPrefixRuleLib.pdb
+D:\Lập trình Window\Project_01\BatchRename-display\BatchRenameAddPrefixRuleLib\obj\Debug\net7.0\ref\BatchRenameAddPrefixRuleLib.dll

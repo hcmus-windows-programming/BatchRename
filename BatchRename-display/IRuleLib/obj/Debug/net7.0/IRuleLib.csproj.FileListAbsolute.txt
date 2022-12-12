@@ -1,0 +1,24 @@
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.deps.json
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.pdb
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.AssemblyInfo.cs
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\refint\IRuleLib.dll
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.pdb
+C:\Users\ADMIN\Downloads\BatchRename-display\IRuleLib\obj\Debug\net7.0\ref\IRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.deps.json
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\bin\Debug\net7.0\IRuleLib.pdb
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.csproj.AssemblyReference.cache
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.AssemblyInfoInputs.cache
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.AssemblyInfo.cs
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.csproj.CoreCompileInputs.cache
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\refint\IRuleLib.dll
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\IRuleLib.pdb
+D:\Lập trình Window\Project_01\BatchRename-display\IRuleLib\obj\Debug\net7.0\ref\IRuleLib.dll

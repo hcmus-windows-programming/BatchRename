@@ -1,0 +1,128 @@
+﻿<Window x:Class="BatchRename.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchRename"
+        mc:Ignorable="d"
+        Title="Batch rename" Height="450" Width="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded">
+	<Window.Resources>
+		<!--Converter-->
+		<local:PreviewRenameConverter x:Key="PreviewRenameConverter"/>
+
+		<!--Context menu-->
+		<ContextMenu x:Key="renamingRulesContextMenu"  Placement="Bottom" DataContext="{Binding MenuItems}" />
+	</Window.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="300"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="150"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height = "100" />
+			<RowDefinition Height = "*" />
+		</Grid.RowDefinitions>
+
+		<Button Grid.Column="2" Grid.Row="0" x:Name="playBatchButton" Height="30" Width="130" Click="playBatchButton_Click" HorizontalAlignment="Left" >
+			<StackPanel Orientation="Horizontal">
+				<Image Source="Icons/play.png" Height="14" Width="17"/>
+				<TextBlock Text="Start Batch" FontWeight="Bold" />
+			</StackPanel>
+		</Button>
+
+		<StackPanel HorizontalAlignment="Left" Margin="10" VerticalAlignment="Bottom">
+			<Button x:Name="addMethod" Width="130" Style="{StaticResource MaterialDesignOutlinedLightButton}"  Click="addMethod_Click" >
+				<StackPanel Orientation="Horizontal">
+					<Image Source="Icons/add.png" Height="14" Width="17"/>
+					<TextBlock Text="Add method" Padding="0,0,0,2" />
+				</StackPanel>
+			</Button>
+			<Label Content="Renaming rules list" FontWeight="Bold" />
+		</StackPanel>
+
+		<StackPanel Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Left">
+			<Button x:Name="addFileButton" Click= "addFileButton_Click" Width="55" Height="30">
+				<Button.Template>
+					<ControlTemplate>
+						<Image Source="Icons/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+					</ControlTemplate>
+				</Button.Template>
+			</Button>
+			<Button x:Name="addFolderButton" Click="addFolderButton_Click" Width="55" Height="30">
+				<Button.Template>
+					<ControlTemplate>
+						<Image Source="Icons/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+					</ControlTemplate>
+				</Button.Template>
+			</Button>
+		</StackPanel>
+
+		<!--Temporary preview instead of active rule list-->
+		<!--<ListView Grid.Column="0" Grid.Row="1" x:Name="previewListView" Margin="10">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Name, Converter={StaticResource PreviewRenameConverter}}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>-->
+
+		<ListView Grid.Column="0" Grid.Row="1" x:Name="selectedRules" Margin="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<Expander Grid.Row="2" Name="ruleExpander"
+						HorizontalAlignment="Left"
+						ExpandDirection="Down" IsExpanded="True" 
+						Style="{StaticResource ExpanderStyle}"
+						Width="260"
+					>
+						<Expander.Header>
+							<Grid Width="240">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="72"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height = "*" />
+								</Grid.RowDefinitions>
+								<TextBlock VerticalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" Text="{Binding Label}" />
+								<StackPanel Grid.Column="1" Width="72" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
+									<CheckBox
+										x:Name="DisplaySelectedItemCheckBox"
+										ToolTip="Active rule"
+										IsThreeState="False" Width="40" Height="24" />
+									<Button x:Name="removeRule" Click="removeRule_Click">
+										<Button.Template>
+											<ControlTemplate>
+												<Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16" />
+											</ControlTemplate>
+										</Button.Template>
+									</Button>
+								</StackPanel>
+							</Grid>
+						</Expander.Header>
+						<TextBlock TextWrapping="Wrap">
+							Content
+						</TextBlock>
+					</Expander>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+		<ListView Grid.Column="1" Grid.ColumnSpan="2" x:Name="sourceListView" Margin="10"  Grid.Row="2">
+			<!--<ListView.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Name}" />
+				</DataTemplate>
+			</ListView.ItemTemplate>-->
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding NewName}"/>
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                </GridView>
+            </ListView.View>
+            
+		</ListView>
+	</Grid>
+</Window>

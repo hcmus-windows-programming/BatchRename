@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BatchRename"
         mc:Ignorable="d"
-        Title="Batch rename" Height="450" Width="800" MinHeight="450" MinWidth="800" Loaded="Window_Loaded">
+        Title="Batch rename" Height="450" Width="1000" MinHeight="450" MinWidth="800" Loaded="Window_Loaded">
 	<Window.Resources>
 		<!--Converter-->
 		<local:PreviewRenameConverter x:Key="PreviewRenameConverter"/>
@@ -68,7 +68,28 @@
 		</ListView>-->
 
 		<ListView Grid.Column="0" Grid.Row="1" x:Name="selectedRules" Margin="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-			<ListView.ItemTemplate>
+            <ListView.Resources>
+                <ContextMenu x:Key="ListViewContextMenu">
+                    <MenuItem Header="Delete" Click="removeRule_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </ContextMenu>
+            </ListView.Resources>
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="ContextMenu" Value="{StaticResource ListViewContextMenu}"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+               
 				<DataTemplate>
 					<Expander Grid.Row="2" Name="ruleExpander"
 						HorizontalAlignment="Left"
@@ -86,18 +107,18 @@
 									<RowDefinition Height = "*" />
 								</Grid.RowDefinitions>
 								<TextBlock VerticalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" Text="{Binding Label}" />
-								<StackPanel Grid.Column="1" Width="72" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
-									<CheckBox
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
+                                    <CheckBox
 										x:Name="DisplaySelectedItemCheckBox"
 										ToolTip="Active rule"
 										IsThreeState="False" Width="40" Height="24" />
-									<Button x:Name="removeRule" Click="removeRule_Click">
+									<!--<Button x:Name="removeRule" Click="removeRule_Click">
 										<Button.Template>
 											<ControlTemplate>
-												<Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16" />
+												 <Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16" />
 											</ControlTemplate>
-										</Button.Template>
-									</Button>
+										 </Button.Template>
+									</Button>-->
 								</StackPanel>
 							</Grid>
 						</Expander.Header>
@@ -117,9 +138,12 @@
 			</ListView.ItemTemplate>-->
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                    <!--<GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding NewName}"/>
-                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>-->
+                    <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding Name, Converter={StaticResource PreviewRenameConverter}}"/>
+                    <GridViewColumn Header="Path" Width="auto" DisplayMemberBinding="{Binding Dir}"/>
                 </GridView>
             </ListView.View>
             

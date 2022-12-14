@@ -1,13 +1,14 @@
 ﻿using Contract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BatchRename
 {
-    public class RuleFactory
+    public class RuleFactory:INotifyPropertyChanged
     {
         static Dictionary<string, IRule> _prototypes = new Dictionary<string, IRule>();
 
@@ -17,6 +18,9 @@ namespace BatchRename
         }
 
         private static RuleFactory? _instance = null;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public static RuleFactory Instance()
         {
             if (_instance == null)

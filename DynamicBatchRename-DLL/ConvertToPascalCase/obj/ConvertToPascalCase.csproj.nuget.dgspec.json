@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\ConvertToPascalCase.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\Contract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\Contract.csproj",
+        "projectName": "Contract",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\Contract.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\ConvertToPascalCase.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\ConvertToPascalCase.csproj",
+        "projectName": "ConvertToPascalCase",
+        "projectPath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\ConvertToPascalCase.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\Contract.csproj": {
+                "projectPath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\Contract\\Contract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

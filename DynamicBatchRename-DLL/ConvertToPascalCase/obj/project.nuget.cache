@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "yEVS+XLgeojRSTTt5yT+H2H7q/o4HcTLYKBeveAqbIOWCKrGfGUCuXlvmIYSb6EKiZMeEbbNFFPhKIvbbE1mRw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ADMIN\\Downloads\\BatchRename-master\\DynamicBatchRename\\ConvertToPascalCase\\ConvertToPascalCase.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\propertychanged.fody\\4.1.0\\propertychanged.fody.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

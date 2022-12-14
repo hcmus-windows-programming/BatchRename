@@ -14,6 +14,7 @@
     <None Remove="Icons\add.png" />
     <None Remove="Icons\addFiles.png" />
     <None Remove="Icons\addFolder.png" />
+    <None Remove="Icons\addPreset.png" />
     <None Remove="Icons\no.png" />
     <None Remove="Icons\play.png" />
     <None Remove="Icons\trash.png" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\addPreset.png" />
     <Resource Include="Icons\id.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

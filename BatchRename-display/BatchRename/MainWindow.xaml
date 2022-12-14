@@ -56,7 +56,14 @@
 					</ControlTemplate>
 				</Button.Template>
 			</Button>
-		</StackPanel>
+            <Button x:Name="addPresetButton" Click="addPresetButton_Click" Width="55" Height="30">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Icons/addPreset.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
 
 		<!--Temporary preview instead of active rule list-->
 		<!--<ListView Grid.Column="0" Grid.Row="1" x:Name="previewListView" Margin="10">
@@ -108,10 +115,10 @@
 								</Grid.RowDefinitions>
 								<TextBlock VerticalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" Text="{Binding Label}" />
                                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
-                                    <CheckBox
+                                    <!--<CheckBox
 										x:Name="DisplaySelectedItemCheckBox"
 										ToolTip="Active rule"
-										IsThreeState="False" Width="40" Height="24" />
+										IsThreeState="False" Width="40" Height="24" />-->
 									<!--<Button x:Name="removeRule" Click="removeRule_Click">
 										<Button.Template>
 											<ControlTemplate>

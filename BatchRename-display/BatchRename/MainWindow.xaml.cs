@@ -277,45 +277,47 @@ namespace BatchRename
         }
         public class Object : INotifyPropertyChanged
         {
-            public string name;
-            public string dir;
-            public string extension;
-            public string Name
-            {
-                get => name; set
-                {
-                    name = value;
-                    RaiseEvent();
-                }
-            }
-            public string Extension
-            {
-                get => extension; set
-                {
-                    extension = value;
-                    RaiseEvent();
-                }
-            }
-            public string Dir
-            {
-                get => dir; set
-                {
-                    dir = value;
-                    RaiseEvent();
-                }
-            }
+            public string Name { get; set; }
+            public string Dir { get; set; }
+            public string Extension { get; set; }
+            public string NewName { get; set; }
+            //public string Name
+            //{
+            //    get => name; set
+            //    {
+            //        name = value;
+            //        RaiseEvent();
+            //    }
+            //}
+            //public string Extension
+            //{
+            //    get => extension; set
+            //    {
+            //        extension = value;
+            //        RaiseEvent();
+            //    }
+            //}
+            //public string Dir
+            //{
+            //    get => dir; set
+            //    {
+            //        dir = value;
+            //        RaiseEvent();
+            //    }
+            //}
             public event PropertyChangedEventHandler PropertyChanged;
 
-            void RaiseEvent([CallerMemberName] string propertyName = "")
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
+            //void RaiseEvent([CallerMemberName] string propertyName = "")
+            //{
+            //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //}
         }
 
         ObservableCollection<Object> Objects = new ObservableCollection<Object>();
         ObservableCollection<IRule> _selectedRules = new ObservableCollection<IRule>();
         List<IRule> _activeRules = new List<IRule>();
         List<IRule> _rules = new List<IRule>();
+
 
         private void addFileButton_Click(object sender, RoutedEventArgs e)
         {
@@ -337,23 +339,24 @@ namespace BatchRename
                             if (Objects[i].Name == Objects[j].Name)
                                 Objects.Remove(Objects[j]);
                         }
+                              
                     }
+                    //sourceListView.ItemsSource = Objects;
+                    //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
+                    //converter.Rules = _activeRules;
+                    //var temp = new ObservableCollection<Object>();
 
-                    sourceListView.ItemsSource = Objects;
-                    var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
-                    converter.Rules = _activeRules;
-                    var temp = new ObservableCollection<Object>();
+                    //foreach (var file in Objects)
+                    //{
+                    //    temp.Add(file);
+                    //}
 
-                    foreach (var file in Objects)
-                    {
-                        temp.Add(file);
-                    }
-
-                    Objects = temp;
+                    //Objects = temp;                  
                     sourceListView.ItemsSource = Objects;
                 }
             }
         }
+        public string _backup_name { get; set; }
         private void addFolderButton_Click(object sender, RoutedEventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
@@ -374,6 +377,7 @@ namespace BatchRename
                             if (Objects[i].Name == Objects[j].Name)
                                 Objects.Remove(Objects[j]);
                         }
+
                     }
 
                     sourceListView.Items.Clear();
@@ -411,18 +415,31 @@ namespace BatchRename
                     _selectedRules.Add(rule);
                     selectedRules.ItemsSource = _selectedRules;
 
-                    var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
-                    converter.Rules = _activeRules;
+                    //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
+                    //converter.Rules = _activeRules;
 
-                    var temp = new ObservableCollection<Object>();
+                    //var temp = new ObservableCollection<Object>();
 
-                    foreach (var file in Objects)
+                    //foreach (var file in Objects)
+                    //{
+                    //    temp.Add(file);
+                    //}
+
+                    //Objects = temp;
+                    for (int i = 0; i < Objects.Count; i++)
                     {
-                        temp.Add(file);
+                        _backup_name = Objects[i].Name;
+                        if (_activeRules != null)
+                        {
+                            foreach (var r in _activeRules)
+                            {
+                                Objects[i].NewName = r.Rename(_backup_name);
+                                _backup_name = Objects[i].NewName;
+                            }
+                        }
                     }
-
-                    Objects = temp;
-                    sourceListView.ItemsSource = Objects;
+                    _backup_name = "";
+                    //sourceListView.ItemsSource = Objects;
                 }
             }
         }
@@ -489,8 +506,38 @@ namespace BatchRename
         }
         private void removeRule_Click(object sender, RoutedEventArgs e)
         {
-            int i = selectedRules.SelectedIndex;
-            _selectedRules.RemoveAt(i);
+            int index = selectedRules.SelectedIndex;
+            _selectedRules.RemoveAt(index);
+            _activeRules.RemoveAt(index);
+            for (int i = 0; i < Objects.Count; i++)
+            {
+                _backup_name = Objects[i].Name;
+                if (_activeRules.Count != 0)
+                {
+                    foreach (var r in _activeRules)
+                    {
+                        Objects[i].NewName = r.Rename(_backup_name);
+                        _backup_name = Objects[i].NewName;
+                    }
+                }
+                else
+                {
+                    Objects[i].NewName = "";
+                }
+            }
+            _backup_name = "";
+            //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
+            //converter.Rules = _activeRules;
+
+            //var temp = new ObservableCollection<Object>();
+
+            //foreach (var file in Objects)
+            //{
+            //    temp.Add(file);
+            //}
+
+            //Objects = temp;
+
         }
     }
 }

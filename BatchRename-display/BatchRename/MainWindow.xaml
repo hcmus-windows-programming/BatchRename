@@ -142,7 +142,8 @@
                     <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding NewName}"/>
                     <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding Status}"/>-->
                     <GridViewColumn Header="Name" Width="200" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding Name, Converter={StaticResource PreviewRenameConverter}}"/>
+                    <GridViewColumn Header="New name" Width="200" DisplayMemberBinding="{Binding NewName}"/>
+                    <!--, Converter={StaticResource PreviewRenameConverter},  Mode=TwoWay}-->
                     <GridViewColumn Header="Path" Width="auto" DisplayMemberBinding="{Binding Dir}"/>
                 </GridView>
             </ListView.View>

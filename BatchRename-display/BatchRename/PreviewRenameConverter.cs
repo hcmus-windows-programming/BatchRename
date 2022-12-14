@@ -22,18 +22,19 @@ namespace BatchRename
 		{
 			string origin = (string)value;
 
-			string newName = origin;
+			string NewName = origin;
 
 			foreach (var rule in Rules)
 			{
-				newName = rule.Rename(newName);
+				NewName = rule.Rename(NewName);
 			}
-			return newName;
+			return NewName;
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			throw new NotImplementedException();
-		}
+            string NewName = (string)value;
+            return NewName;
+        }
 	}
 }

@@ -1,7 +1,7 @@
 ﻿//using Microsoft.Win32;
 //using System;
 //using System.Collections.Generic;
-//using System.Collections.ObjectModel;
+//using System.Collections.objectModel;
 //using System.IO;
 //using System.Linq;
 //using System.Text;
@@ -34,7 +34,7 @@
 //		{
 //			InitializeComponent();
 //		}
-//		public class Object : INotifyPropertyChanged
+//		public class object : INotifyPropertyChanged
 //		{
 //			public string name;
 //			public string dir;
@@ -71,7 +71,7 @@
 //			}
 //		}
 
-//		ObservableCollection<Object> Objects = new ObservableCollection<Object>();
+//		ObservableCollection<object> objects = new ObservableCollection<object>();
 //		ObservableCollection<IRule> _selectedRules = new ObservableCollection<IRule>();
 //		List<IRule> _activeRules = new List<IRule>();
 
@@ -81,23 +81,23 @@
 //			dialog.Multiselect = true;
 //			dialog.IsFolderPicker = false;
 
-//			if (Objects.Count != 0 && Objects[0].Extension == "")
-//				Objects.Clear();
+//			if (objects.Count != 0 && objects[0].Extension == "")
+//				objects.Clear();
 //			if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
 //			{
 //				foreach (string sFileName in dialog.FileNames)
 //				{
-//					Objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
-//					for (int i = 0; i < Objects.Count; i++)
+//					objects.Add(new object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
+//					for (int i = 0; i < objects.Count; i++)
 //					{
-//						for (int j = i + 1; j < Objects.Count; j++)
+//						for (int j = i + 1; j < objects.Count; j++)
 //						{
-//							if (Objects[i].Name == Objects[j].Name)
-//								Objects.Remove(Objects[j]);
+//							if (objects[i].Name == objects[j].Name)
+//								objects.Remove(objects[j]);
 //						}
 //					}
 
-//					sourceListView.ItemsSource = Objects;
+//					sourceListView.ItemsSource = objects;
 //				}
 //			}
 //		}
@@ -107,24 +107,24 @@
 //			dialog.Multiselect = true;
 //			dialog.IsFolderPicker = true;
 
-//			if (Objects.Count != 0 && Objects[0].Extension != "")
-//				Objects.Clear();
+//			if (objects.Count != 0 && objects[0].Extension != "")
+//				objects.Clear();
 //			if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
 //			{
 //				foreach (string sFileName in dialog.FileNames)
 //				{
-//					Objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
-//					for (int i = 0; i < Objects.Count; i++)
+//					objects.Add(new object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
+//					for (int i = 0; i < objects.Count; i++)
 //					{
-//						for (int j = i + 1; j < Objects.Count; j++)
+//						for (int j = i + 1; j < objects.Count; j++)
 //						{
-//							if (Objects[i].Name == Objects[j].Name)
-//								Objects.Remove(Objects[j]);
+//							if (objects[i].Name == objects[j].Name)
+//								objects.Remove(objects[j]);
 //						}
 //					}
 
 //					sourceListView.Items.Clear();
-//					foreach (Object obj in Objects)
+//					foreach (object obj in objects)
 //					{
 //						sourceListView.Items.Add(obj);
 //					}
@@ -159,14 +159,14 @@
 //                    var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
 //                    converter.Rules = _activeRules;
 
-//                    var temp = new ObservableCollection<Object>();
+//                    var temp = new ObservableCollection<object>();
 
-//                    foreach (var file in Objects)
+//                    foreach (var file in objects)
 //                    {
 //                        temp.Add(file);
 //                    }
 
-//                    Objects = temp;
+//                    objects = temp;
 //                }
 
 //			}
@@ -313,7 +313,7 @@ namespace BatchRename
             //}
         }
 
-        ObservableCollection<Object> Objects = new ObservableCollection<Object>();
+        ObservableCollection<Object> objects = new ObservableCollection<Object>();
         ObservableCollection<IRule> _selectedRules = new ObservableCollection<IRule>();
         List<IRule> _activeRules = new List<IRule>();
         List<IRule> _rules = new List<IRule>();
@@ -325,53 +325,53 @@ namespace BatchRename
             dialog.Multiselect = true;
             dialog.IsFolderPicker = false;
 
-            if (Objects.Count != 0 && Objects[0].Extension == "")
-                Objects.Clear();
+            //if (objects.Count != 0 && objects[0].Extension == "")
+            //    objects.Clear();
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 foreach (string sFileName in dialog.FileNames)
                 {
-                    Objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
-                    for (int i = 0; i < Objects.Count; i++)
+                    objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
+                    for (int i = 0; i < objects.Count; i++)
                     {
-                        for (int j = i + 1; j < Objects.Count; j++)
+                        for (int j = i + 1; j < objects.Count; j++)
                         {
-                            if (Objects[i].Name == Objects[j].Name)
-                                Objects.Remove(Objects[j]);
+                            if (objects[i].Name == objects[j].Name)
+                                objects.Remove(objects[j]);
                         }
-                        _backup_name = Objects[i].Name;
+                        _backup_name = objects[i].Name;
                         if (_activeRules.Count != 0)
                         {
                             foreach (var r in _activeRules)
                             {
-                                Objects[i].NewName = r.Rename(_backup_name);
-                                _backup_name = Objects[i].NewName;
+                                objects[i].NewName = r.Rename(_backup_name);
+                                _backup_name = objects[i].NewName;
                             }
                         }
                     }
-                    //sourceListView.ItemsSource = Objects;
+                    //sourceListView.ItemsSource = objects;
                     //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
                     //converter.Rules = _activeRules;
-                    //var temp = new ObservableCollection<Object>();
+                    //var temp = new ObservableCollection<object>();
 
-                    //foreach (var file in Objects)
+                    //foreach (var file in objects)
                     //{
                     //    temp.Add(file);
                     //}
-                    //for (int i = 0; i < Objects.Count; i++)
+                    //for (int i = 0; i < objects.Count; i++)
                     //{
-                    //    _backup_name = Objects[i].Name;
+                    //    _backup_name = objects[i].Name;
                     //    if (_activeRules.Count != 0)
                     //    {
                     //        foreach (var r in _activeRules)
                     //        {
-                    //            Objects[i].NewName = r.Rename(_backup_name);
-                    //            _backup_name = Objects[i].NewName;
+                    //            objects[i].NewName = r.Rename(_backup_name);
+                    //            _backup_name = objects[i].NewName;
                     //        }
                     //    }
                     //}
                     _backup_name = "";
-                    //Objects = temp;                  
+                    //objects = temp;                  
 
                 }
             }
@@ -383,28 +383,28 @@ namespace BatchRename
             dialog.Multiselect = true;
             dialog.IsFolderPicker = true;
 
-            if (Objects.Count != 0 && Objects[0].Extension != "")
-                Objects.Clear();
+            //if (objects.Count != 0 && objects[0].Extension != "")
+            //    objects.Clear();
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 foreach (string sFileName in dialog.FileNames)
                 {
-                    Objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
-                    for (int i = 0; i < Objects.Count; i++)
+                    objects.Add(new Object { Name = Path.GetFileName(sFileName), Dir = Path.GetDirectoryName(sFileName) + "\\", Extension = Path.GetExtension(sFileName) });
+                    for (int i = 0; i < objects.Count; i++)
                     {
-                        for (int j = i + 1; j < Objects.Count; j++)
+                        for (int j = i + 1; j < objects.Count; j++)
                         {
-                            if (Objects[i].Name == Objects[j].Name)
-                                Objects.Remove(Objects[j]);
+                            if (objects[i].Name == objects[j].Name)
+                                objects.Remove(objects[j]);
                         }
 
                     }
 
-                    sourceListView.Items.Clear();
-                    foreach (Object obj in Objects)
-                    {
-                        sourceListView.Items.Add(obj);
-                    }
+                    //sourceListView.Items.Clear();
+                    //foreach (object obj in objects)
+                    //{
+                    //    sourceListView.Items.Add(obj);
+                    //}
                 }
             }
         }
@@ -414,12 +414,12 @@ namespace BatchRename
             var dialog = MessageBox.Show($"Are you sure to rename all files?", "Warning", MessageBoxButton.YesNo);
             if (dialog == MessageBoxResult.Yes)
             {
-                for (int i = 0; i < Objects.Count; i++)
+                for (int i = 0; i < objects.Count; i++)
                 {
-                    string old_name = Objects[i].Name;
-                    string new_name = Objects[i].NewName;
-                    string oldDirName = Objects[i].Dir + old_name;
-                    string newDirName = Objects[i].Dir + new_name;
+                    string old_name = objects[i].Name;
+                    string new_name = objects[i].NewName;
+                    string oldDirName = objects[i].Dir + old_name;
+                    string newDirName = objects[i].Dir + new_name;
                     try
                     {
                         File.Move(oldDirName, newDirName);
@@ -457,27 +457,27 @@ namespace BatchRename
                     //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
                     //converter.Rules = _activeRules;
 
-                    //var temp = new ObservableCollection<Object>();
+                    //var temp = new ObservableCollection<object>();
 
-                    //foreach (var file in Objects)
+                    //foreach (var file in objects)
                     //{
                     //    temp.Add(file);
                     //}
 
-                    //Objects = temp;
+                    //objects = temp;
                    
-                    //sourceListView.ItemsSource = Objects;
+                    //sourceListView.ItemsSource = objects;
                 }
             }
-            for (int i = 0; i < Objects.Count; i++)
+            for (int i = 0; i < objects.Count; i++)
             {
-                _backup_name = Objects[i].Name;
+                _backup_name = objects[i].Name;
                 if (_activeRules.Count != 0)
                 {
                     foreach (var r in _activeRules)
                     {
-                        Objects[i].NewName = r.Rename(_backup_name);
-                        _backup_name = Objects[i].NewName;
+                        objects[i].NewName = r.Rename(_backup_name);
+                        _backup_name = objects[i].NewName;
                     }
                 }
             }
@@ -544,41 +544,41 @@ namespace BatchRename
                 contextMenu!.Items.Add(menuItem);
             }
            
-            sourceListView.ItemsSource = Objects;
+            sourceListView.ItemsSource = objects;
         }
         private void removeRule_Click(object sender, RoutedEventArgs e)
         {
             int index = selectedRules.SelectedIndex;
             _selectedRules.RemoveAt(index);
             _activeRules.RemoveAt(index);
-            for (int i = 0; i < Objects.Count; i++)
+            for (int i = 0; i < objects.Count; i++)
             {
-                _backup_name = Objects[i].Name;
+                _backup_name = objects[i].Name;
                 if (_activeRules.Count != 0)
                 {
                     foreach (var r in _activeRules)
                     {
-                        Objects[i].NewName = r.Rename(_backup_name);
-                        _backup_name = Objects[i].NewName;
+                        objects[i].NewName = r.Rename(_backup_name);
+                        _backup_name = objects[i].NewName;
                     }
                 }
                 else
                 {
-                    Objects[i].NewName = "";
+                    objects[i].NewName = "";
                 }
             }
             _backup_name = "";
             //var converter = (PreviewRenameConverter)FindResource("PreviewRenameConverter");
             //converter.Rules = _activeRules;
 
-            //var temp = new ObservableCollection<Object>();
+            //var temp = new ObservableCollection<object>();
 
-            //foreach (var file in Objects)
+            //foreach (var file in objects)
             //{
             //    temp.Add(file);
             //}
 
-            //Objects = temp;
+            //objects = temp;
 
         }
 
@@ -603,6 +603,17 @@ namespace BatchRename
                 }
             }
            
+        }
+
+        private void sourceListView_Drop(object sender, DragEventArgs e)
+        {
+            string[] files = e.Data.GetData(System.Windows.DataFormats.FileDrop, false) as string[];
+            for (int i = 0; i < files.Count(); i++) 
+            {
+                objects.Add(new Object { Name = Path.GetFileName(files[i]), 
+                    Dir = Path.GetDirectoryName(files[i]) + "\\", Extension = Path.GetExtension(files[i]) });
+            }
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Contract;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 
 namespace RemoveSpecialCharsRule
@@ -12,6 +13,7 @@ namespace RemoveSpecialCharsRule
         public string Name => "RemoveSpecialChars";
 
         public string Label => "Remove special chars";
+        public string textPreset => $"{Name} SpecialChars={String.Join("",SpecialChars)}";
 
         public RemoveSpecialCharsRule()
         {

@@ -8,6 +8,7 @@ namespace Contract
         IRule? Parse(string data);
         string Name { get; }
         string Label { get; }
+        string textPreset { get; }
         public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

@@ -39,7 +39,7 @@ foreach (var line in rulesData)
 var filenames = new List<string>
 {
     "WARD_VS_VITAL_SIGNS",
-    "TDQuang      google.pdf",
+    "Lyhai      google.pdf",
     "  david------osilic  giant.pdf",
     "CV  apply______ UltraMegaCop.pdf"
 };

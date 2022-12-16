@@ -10,6 +10,7 @@ namespace ConvertToLowcase
         public String Name => "ConvertToLowcase";
 
         public string Label => "Convert to lowcase";
+        public string textPreset => $"{Name}";
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -10,7 +10,7 @@ namespace AddCurrentMonth
         public string Label => "Add current month";
 
         public event PropertyChangedEventHandler? PropertyChanged;
-
+        public string textPreset => $"{Name}";
         public object Clone()
         {
             return MemberwiseClone();
@@ -18,6 +18,7 @@ namespace AddCurrentMonth
 
         public IRule? Parse(string data)
         {
+
             return new AddCurrentMonth();
         }
 

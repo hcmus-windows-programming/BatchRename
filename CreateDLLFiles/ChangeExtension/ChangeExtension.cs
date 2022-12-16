@@ -9,7 +9,7 @@ namespace ChangeExtension
         public String Extension { get; set; }
         public string Name => "ChangeExtension";
         public string Label => "Change extension";
-
+        public string textPreset => $"{Name} Extension={Extension}";
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public object Clone()

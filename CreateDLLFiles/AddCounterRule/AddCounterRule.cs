@@ -27,6 +27,7 @@ namespace AddCounterRule
 
         public string Label => "Add counter";
 
+        public string textPreset => $"{Name} Start={Start},Step={Step},numDigits={numDigits}";
         public AddCounterRule()
         {
             Start = 1;
@@ -66,6 +67,7 @@ namespace AddCounterRule
         public IRule Parse(string line)
         {
             var rule = new AddCounterRule();
+
             var tokens = line.Split(new string[] { " " },
                 StringSplitOptions.None);
             var data = tokens[1];

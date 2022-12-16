@@ -10,7 +10,7 @@ namespace ConvertToPascalCase
         public string Name => "ConvertToPascalCase";
 
         public string Label => "Convert to Pascal Case";
-
+        public string textPreset => $"{Name}";
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public object Clone()

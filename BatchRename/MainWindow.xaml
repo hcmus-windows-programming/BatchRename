@@ -8,24 +8,24 @@
         Title="Batch rename" Height="450" Width="1000" MinHeight="450" MinWidth="800" Loaded="Window_Loaded">
     <Window.Resources>
         <ContextMenu x:Key="renamingRulesContextMenu"  Placement="Bottom" DataContext="{Binding MenuItems}" />
-	</Window.Resources>
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="300"/>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="150"/>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height = "100" />
-			<RowDefinition Height = "*" />
-		</Grid.RowDefinitions>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "100" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
 
-		<Button Grid.Column="2" Grid.Row="0" x:Name="playBatchButton" Height="30" Width="130" Click="playBatchButton_Click" HorizontalAlignment="Left" >
-			<StackPanel Orientation="Horizontal">
-				<Image Source="Icons/play.png" Height="14" Width="17"/>
-				<TextBlock Text="Start Batch" FontWeight="Bold" />
-			</StackPanel>
-		</Button>
+        <Button Grid.Column="2" Grid.Row="0" x:Name="playBatchButton" Height="30" Width="130" Click="playBatchButton_Click" HorizontalAlignment="Left" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Icons/play.png" Height="14" Width="17"/>
+                <TextBlock Text="Start Batch" FontWeight="Bold" />
+            </StackPanel>
+        </Button>
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Bottom"  HorizontalAlignment="Left">
             <StackPanel HorizontalAlignment="Left" Margin="10,10,10,0" VerticalAlignment="Bottom" Orientation="Horizontal">
@@ -41,27 +41,27 @@
                         <TextBlock Text="Edit default rules" Padding="0,0,0,2" />
                     </StackPanel>
                 </Button>
-               
+
             </StackPanel>
             <Label Content="Renaming rules list" FontWeight="Bold" Margin="18,0,0,0"/>
 
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-			<Button x:Name="addFileButton" Click= "addFileButton_Click" ToolTip="Add files" Width="55" Height="30">
-				<Button.Template>
-					<ControlTemplate>
-						<Image Source="Icons/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
-					</ControlTemplate>
-				</Button.Template>
-			</Button>
+            <Button x:Name="addFileButton" Click= "addFileButton_Click" ToolTip="Add files" Width="55" Height="30">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Icons/addFiles.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="addFolderButton" Click="addFolderButton_Click" ToolTip="Add folders" Width="55" Height="30">
-				<Button.Template>
-					<ControlTemplate>
-						<Image Source="Icons/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
-					</ControlTemplate>
-				</Button.Template>
-			</Button>
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="Icons/addFolder.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
             <Button x:Name="addAllFilesInFolder" Click="addAllFilesInFolder_Click" ToolTip="Add all files in folders" Width="55" Height="30">
                 <Button.Template>
                     <ControlTemplate>
@@ -69,17 +69,11 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="addPreset" Click="addPreset_Click" ToolTip="Add preset" Width="55" Height="30">
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="Icons/addPreset.png"  RenderOptions.BitmapScalingMode="HighQuality" />
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            
         </StackPanel>
 
-		<!--Temporary preview instead of active rule list-->
-		<!--<ListView Grid.Column="0" Grid.Row="1" x:Name="previewListView" Margin="10">
+        <!--Temporary preview instead of active rule list-->
+        <!--<ListView Grid.Column="0" Grid.Row="1" x:Name="previewListView" Margin="10">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<TextBlock Text="{Binding Name, Converter={StaticResource PreviewRenameConverter}}" />
@@ -87,71 +81,98 @@
 			</ListView.ItemTemplate>
 		</ListView>-->
 
-		<ListView Grid.Column="0" Grid.Row="1" x:Name="selectedRules" Margin="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListView.Resources>
-                <ContextMenu x:Key="ListViewContextMenu">
-                    <MenuItem Header="Delete" Click="removeRule_Click">
-                        <MenuItem.Icon>
-                            <Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </ContextMenu>
-            </ListView.Resources>
-            
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="ContextMenu" Value="{StaticResource ListViewContextMenu}"/>
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-               
-				<DataTemplate>
-					<Expander Grid.Row="2" Name="ruleExpander"
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Presets" VerticalAlignment="Center"></Label>
+                <ComboBox Name="presetsDropDown"  Width="160" Margin="0,0,10,0" SelectionChanged="presetsDropDown_SelectionChanged">
+                    
+                </ComboBox>
+                <Button x:Name="addPreset" Click="addPreset_Click" ToolTip="Add preset" Width="40" Height="30">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Icons/addPreset.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="savePresetButton" Click="savePresetButton_Click" ToolTip="Save preset" Width="30" Height="30">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="Icons/savepreset.png"  RenderOptions.BitmapScalingMode="HighQuality" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <ListView x:Name="selectedRules" Margin="5" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView.Resources>
+                    <ContextMenu x:Key="ListViewContextMenu">
+                        <MenuItem Header="Delete" Click="removeRule_Click">
+                            <MenuItem.Icon>
+                                <Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </ListView.Resources>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="ContextMenu" Value="{StaticResource ListViewContextMenu}"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <Expander Grid.Row="2" x:Name="ruleExpander"
 						HorizontalAlignment="Left"
 						ExpandDirection="Down"
 						Style="{StaticResource MaterialDesignExpander}"
 						Width="260"
+					Content="&gt;"
 					>
-						<Expander.Header>
-							<Grid Width="240">
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="*"/>
-									<ColumnDefinition Width="72"/>
-								</Grid.ColumnDefinitions>
-								<Grid.RowDefinitions>
-									<RowDefinition Height = "*" />
-								</Grid.RowDefinitions>
-								<TextBlock VerticalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" Text="{Binding Label}" />
-                                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
-                                    <!--<CheckBox
+                            <!--<TextBlock TextWrapping="Wrap">
+							Content
+						</TextBlock-->
+
+                            <Expander.Header>
+                                <Grid Width="240">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="72"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height = "*" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock VerticalAlignment="Center" Grid.Column="0" TextWrapping="Wrap" FontWeight="Bold" Foreground="Black" Text="{Binding Label}" />
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" DockPanel.Dock="Right">
+                                        <!--<CheckBox
 										x:Name="DisplaySelectedItemCheckBox"
 										ToolTip="Active rule"
 										IsThreeState="False" Width="40" Height="24" />-->
-									<!--<Button x:Name="removeRule" Click="removeRule_Click">
+
+                                        <!--<Button x:Name="removeRule" Click="removeRule_Click">
 										<Button.Template>
 											<ControlTemplate>
 												 <Image Source="Icons/no.png" RenderOptions.BitmapScalingMode="HighQuality" Width="16" Height="16" />
 											</ControlTemplate>
 										 </Button.Template>
 									</Button>-->
-								</StackPanel>
-							</Grid>
-						</Expander.Header>
-                        <!--<TextBlock TextWrapping="Wrap">
-							Content
-						</TextBlock-->>
-					</Expander>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
 
-		<ListView Drop="sourceListView_Drop" AllowDrop="True" Grid.Column="1" Grid.ColumnSpan="2" x:Name="sourceListView" Margin="10"  Grid.Row="2">
-			<!--<ListView.ItemTemplate>
+                                    </StackPanel>
+                                </Grid>
+                            </Expander.Header>
+                        </Expander>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+
+        <ListView Drop="sourceListView_Drop" AllowDrop="True" Grid.Column="1" Grid.ColumnSpan="2" x:Name="sourceListView" Margin="10"  Grid.Row="2">
+            <!--<ListView.ItemTemplate>
 				<DataTemplate>
 					<TextBlock Text="{Binding Name}" />
 				</DataTemplate>
@@ -167,7 +188,7 @@
                     <GridViewColumn Header="Path" Width="200" DisplayMemberBinding="{Binding Dir}"/>
                 </GridView>
             </ListView.View>
-            
-		</ListView>
-	</Grid>
+
+        </ListView>
+    </Grid>
 </Window>

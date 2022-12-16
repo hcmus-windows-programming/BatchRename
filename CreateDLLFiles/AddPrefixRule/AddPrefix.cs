@@ -9,9 +9,8 @@ namespace AddPrefixRule
         public string Prefix { get; set; }
 
         public string Name => "AddPrefix";
-
         public string Label => "Add prefix";
-
+        public string textPreset => $"{Name} Prefix={Prefix}";
         public AddPrefix()
         {
             Prefix = "";

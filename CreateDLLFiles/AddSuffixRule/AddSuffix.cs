@@ -7,11 +7,10 @@ namespace AddSuffixRule
     public class AddSuffix : IRule
     {
         public string Suffix { get; set; }
-
         public string Name => "AddSuffix";
 
         public string Label => "Add suffix";
-
+        public string textPreset => $"{Name} Suffix={Suffix}";
         public AddSuffix()
             {
                 Suffix = "";

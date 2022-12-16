@@ -12,6 +12,7 @@ namespace ReplaceCertainChars
         public string Name => "ReplaceCertainChars";
 
         public string Label => "Replace certain chars";
+        public string textPreset => $"{Name} CertainChars={String.Join("",CertainChars)},Replace={Replacement}";
         public ReplaceCertainChars()
         {
             CertainChars = new List<string>();

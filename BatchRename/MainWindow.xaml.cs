@@ -305,7 +305,6 @@ namespace BatchRename
             foreach (var line in rulesData)
             {
                 var rule = RuleFactory.Instance().Parse(line);
-
                 if (rule != null)
                 {
                     _rules.Add(rule);
@@ -336,15 +335,17 @@ namespace BatchRename
             }
 
         }
-
         private void addPreset_Click(object sender, RoutedEventArgs e)
         {
             var screen = new OpenFileDialog();
 
             if (screen.ShowDialog() == true)
             {
+                _selectedRules.Clear();
+                _activeRules.Clear();
                 string presetPath = screen.FileName;
-
+                presetsDropDown.Items.Add(presetPath);
+                presetsDropDown.SelectedItem = presetPath;
                 var lines = File.ReadAllLines(presetPath);
 
                 foreach (var line in lines)
@@ -369,6 +370,27 @@ namespace BatchRename
                 }
                 _backup_name = "";
             }
+        }
+
+        private void savePresetButton_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "Text file(*.txt)|*.txt";
+            string savePreset = "";
+            for(int i=0;i < _activeRules.Count; i++)
+            {
+                savePreset += _activeRules[i].textPreset + '\n';
+            }
+            
+            if(dlg.ShowDialog() == true)
+            {
+                File.WriteAllText(dlg.FileName, savePreset);
+            }
+        }
+
+        private void presetsDropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

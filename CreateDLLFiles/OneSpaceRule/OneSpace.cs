@@ -9,7 +9,7 @@ namespace OneSpaceRule
         public string Name => "OneSpace";
 
         public string Label => "One space";
-
+        public string textPreset => $"{Name}";
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public object Clone()

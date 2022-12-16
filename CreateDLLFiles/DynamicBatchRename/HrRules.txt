@@ -6,3 +6,4 @@ AddPrefix Prefix=Begin
 AddSuffix Suffix=End
 ConvertToLowcase
 ConvertToPascalCase
+ReplaceCertainChars CertainChars=-_,Replace=$

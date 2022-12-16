@@ -1,0 +1,11 @@
+﻿ChangeExtension Extension=docx
+AddCounter Start=0,Step=2,numDigits=2
+AllSpace
+RemoveSpecialChars SpecialChars=-_
+AddPrefix Prefix=Begin
+AddSuffix Suffix=End
+ConvertToLowcase
+ConvertToPascalCase
+AddCurrentMonth
+OneSpace
+ReplaceCertainChars CertainChars=-_,Replace=$

@@ -293,10 +293,10 @@ namespace BatchRename
 
         private void editPresetButton_Click(object sender, RoutedEventArgs e)
         {
-
             _rules.Clear();
+
             string presetPath = "HrRules.txt";
-           
+
             var screen = new EditPresetWindow(presetPath);
             if (screen.ShowDialog() == true)
             {
@@ -311,7 +311,16 @@ namespace BatchRename
                     _rules.Add(rule);
                 }
             }
-           
+            ContextMenu? contextMenu = FindResource("renamingRulesContextMenu") as ContextMenu;
+            contextMenu?.Items.Clear();
+            foreach (var rule in _rules)
+            {
+                var menuItem = new MenuItem();
+                menuItem.Header = rule?.Label!;
+                menuItem.Click += menuItemRenamingRulesContextMenu_Click;
+                contextMenu!.Items.Add(menuItem);
+            }
+
         }
         private void sourceListView_Drop(object sender, DragEventArgs e)
         {

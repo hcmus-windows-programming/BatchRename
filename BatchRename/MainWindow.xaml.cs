@@ -40,7 +40,7 @@ namespace BatchRename
             public string Dir { get; set; }
             public string Extension { get; set; }
             public string NewName { get; set; }
-          
+
             public event PropertyChangedEventHandler PropertyChanged;
 
         }
@@ -81,7 +81,7 @@ namespace BatchRename
                             }
                         }
                     }
-                    _backup_name = "";                  
+                    _backup_name = "";
 
                 }
             }
@@ -264,7 +264,7 @@ namespace BatchRename
                 menuItem.Click += menuItemRenamingRulesContextMenu_Click;
                 contextMenu!.Items.Add(menuItem);
             }
-           
+
             sourceListView.ItemsSource = objects;
         }
         private void removeRule_Click(object sender, RoutedEventArgs e)
@@ -325,13 +325,50 @@ namespace BatchRename
         private void sourceListView_Drop(object sender, DragEventArgs e)
         {
             string[] files = e.Data.GetData(System.Windows.DataFormats.FileDrop, false) as string[];
-            for (int i = 0; i < files.Count(); i++) 
+            for (int i = 0; i < files.Count(); i++)
             {
-                objects.Add(new Object { Name = Path.GetFileName(files[i]), 
-                    Dir = Path.GetDirectoryName(files[i]) + "\\", 
-                    Extension = Path.GetExtension(files[i]) });
+                objects.Add(new Object
+                {
+                    Name = Path.GetFileName(files[i]),
+                    Dir = Path.GetDirectoryName(files[i]) + "\\",
+                    Extension = Path.GetExtension(files[i])
+                });
             }
-            
+
+        }
+
+        private void addPreset_Click(object sender, RoutedEventArgs e)
+        {
+            var screen = new OpenFileDialog();
+
+            if (screen.ShowDialog() == true)
+            {
+                string presetPath = screen.FileName;
+
+                var lines = File.ReadAllLines(presetPath);
+
+                foreach (var line in lines)
+                {
+                    IRule rule = RuleFactory.Instance().Parse(line);
+                    _activeRules.Add(rule);
+                    _selectedRules.Add(rule);
+                    selectedRules.ItemsSource = _selectedRules;
+                }
+
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    _backup_name = objects[i].Name;
+                    if (_activeRules.Count != 0)
+                    {
+                        foreach (var r in _activeRules)
+                        {
+                            objects[i].NewName = r.Rename(_backup_name);
+                            _backup_name = objects[i].NewName;
+                        }
+                    }
+                }
+                _backup_name = "";
+            }
         }
     }
 }

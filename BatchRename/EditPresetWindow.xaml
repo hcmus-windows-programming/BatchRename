@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BatchRename"
         mc:Ignorable="d"
-        Title="EditPresetWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="EditDefaultRulesWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Canvas>
 
         <TextBox x:Name="textbox" Width="300" Height="200" HorizontalAlignment="Left" Canvas.Left="250" VerticalAlignment="Center" Canvas.Top="54"></TextBox>

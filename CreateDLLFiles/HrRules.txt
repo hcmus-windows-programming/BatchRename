@@ -1,0 +1,9 @@
+﻿ChangeExtension Extension=docx
+AddCounter Start=0,Step=3,numDigits=4
+AllSpace
+RemoveSpecialChars SpecialChars=-_
+AddPrefix Prefix=Begin
+AddSuffix Suffix=End
+ConvertToLowcase
+ConvertToPascalCase
+ReplaceContainChars ContainChars=-_,Replace=$

@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Icons\id.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\add.png" />
+    <None Remove="Icons\addAllFiles.png" />
+    <None Remove="Icons\addFiles.png" />
+    <None Remove="Icons\addFolder.png" />
+    <None Remove="Icons\no.png" />
+    <None Remove="Icons\play.png" />
+    <None Remove="Icons\trash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\add.png" />
+    <Resource Include="Icons\addAllFiles.png" />
+    <Resource Include="Icons\id.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Core" Version="1.1.4" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AddCounterRule">
+      <HintPath>DLLFiles\AddCounterRule.dll</HintPath>
+    </Reference>
+    <Reference Include="AddCurrentMonth">
+      <HintPath>DLLFiles\AddCurrentMonth.dll</HintPath>
+    </Reference>
+    <Reference Include="AddPrefixRule">
+      <HintPath>DLLFiles\AddPrefixRule.dll</HintPath>
+    </Reference>
+    <Reference Include="AddSuffixRule">
+      <HintPath>DLLFiles\AddSuffixRule.dll</HintPath>
+    </Reference>
+    <Reference Include="AllSpace">
+      <HintPath>DLLFiles\AllSpace.dll</HintPath>
+    </Reference>
+    <Reference Include="ChangeExtension">
+      <HintPath>DLLFiles\ChangeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Contract">
+      <HintPath>DLLFiles\Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="ConvertToLowcase">
+      <HintPath>DLLFiles\ConvertToLowcase.dll</HintPath>
+    </Reference>
+    <Reference Include="ConvertToPascalCase">
+      <HintPath>DLLFiles\ConvertToPascalCase.dll</HintPath>
+    </Reference>
+    <Reference Include="OneSpaceRule">
+      <HintPath>DLLFiles\OneSpaceRule.dll</HintPath>
+    </Reference>
+    <Reference Include="RemoveSpecialCharsRule">
+      <HintPath>DLLFiles\RemoveSpecialCharsRule.dll</HintPath>
+    </Reference>
+    <Reference Include="ReplaceCertainChars">
+      <HintPath>DLLFiles\ReplaceCertainChars.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\addFiles.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\addFolder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\no.png" />
+    <Resource Include="Icons\play.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\trash.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HrRules.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

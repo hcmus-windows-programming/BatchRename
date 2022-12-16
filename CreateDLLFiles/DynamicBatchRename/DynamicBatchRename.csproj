@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contract\Contract.csproj" />
+    <ProjectReference Include="..\OneSpaceRule\OneSpaceRule.csproj" />
+	  <ProjectReference Include="..\AllSpace\AllSpace.csproj" />
+	<ProjectReference Include="..\AddPrefixRule\AddPrefixRule.csproj" />
+	<ProjectReference Include="..\AddSuffixRule\AddSuffixRule.csproj" />
+	<ProjectReference Include="..\RemoveSpecialCharsRule\RemoveSpecialCharsRule.csproj" />
+	<ProjectReference Include="..\AddCurrentMonth\AddCurrentMonth.csproj" />
+	  <ProjectReference Include="..\AddCounterRule\AddCounterRule.csproj" />
+	  <ProjectReference Include="..\ConvertToLowcase\ConvertToLowcase.csproj" />
+	  <ProjectReference Include="..\ChangeExtension\ChangeExtension.csproj" />
+	  <ProjectReference Include="..\ConvertToPascalCase\ConvertToPascalCase.csproj" />
+	  <ProjectReference Include="..\ReplaceCertainChars\ReplaceCertainChars.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HrRules.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

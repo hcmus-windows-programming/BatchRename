@@ -337,38 +337,15 @@ namespace BatchRename
         }
         private void addPreset_Click(object sender, RoutedEventArgs e)
         {
-            var screen = new OpenFileDialog();
-
-            if (screen.ShowDialog() == true)
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.Multiselect = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                _selectedRules.Clear();
-                _activeRules.Clear();
-                string presetPath = screen.FileName;
-                presetsDropDown.Items.Add(presetPath);
-                presetsDropDown.SelectedItem = presetPath;
-                var lines = File.ReadAllLines(presetPath);
-
-                foreach (var line in lines)
+                foreach (string presetPath in dialog.FileNames)
                 {
-                    IRule rule = RuleFactory.Instance().Parse(line);
-                    _activeRules.Add(rule);
-                    _selectedRules.Add(rule);
-                    selectedRules.ItemsSource = _selectedRules;
+                    presetsDropDown.Items.Add(presetPath);
+                    presetsDropDown.SelectedItem = presetPath;
                 }
-
-                for (int i = 0; i < objects.Count; i++)
-                {
-                    _backup_name = objects[i].Name;
-                    if (_activeRules.Count != 0)
-                    {
-                        foreach (var r in _activeRules)
-                        {
-                            objects[i].NewName = r.Rename(_backup_name);
-                            _backup_name = objects[i].NewName;
-                        }
-                    }
-                }
-                _backup_name = "";
             }
         }
 
@@ -390,7 +367,32 @@ namespace BatchRename
 
         private void presetsDropDown_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string presetPath = presetsDropDown.SelectedItem.ToString();
+            var lines = File.ReadAllLines(presetPath);
+            _selectedRules.Clear();
+            _activeRules.Clear();
+            foreach (var line in lines)
+            {
+                IRule rule = RuleFactory.Instance().Parse(line);
+                _activeRules.Add(rule);
+                _selectedRules.Add(rule);
+                selectedRules.ItemsSource = _selectedRules;
+            }
 
+            for (int i = 0; i < objects.Count; i++)
+            {
+                _backup_name = objects[i].Name;
+                if (_activeRules.Count != 0)
+                {
+                    foreach (var r in _activeRules)
+                    {
+                        objects[i].NewName = r.Rename(_backup_name);
+                        _backup_name = objects[i].NewName;
+                    }
+                }
+            }
+            _backup_name = "";
         }
+    
     }
 }

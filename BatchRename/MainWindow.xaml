@@ -36,7 +36,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="editPreset" Width="140" Style="{StaticResource MaterialDesignOutlinedLightButton}" Margin="0,0,0,0" VerticalAlignment="Center" Click="editPresetButton_Click" >
+                <Button x:Name="editPreset" Width="140" Style="{StaticResource MaterialDesignOutlinedLightButton}" Margin="0,0,0,0" VerticalAlignment="Center" Click="editRulesButton_Click" >
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Edit default rules" Padding="0,0,0,2" />
                     </StackPanel>

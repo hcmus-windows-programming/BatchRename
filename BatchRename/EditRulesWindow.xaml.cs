@@ -18,11 +18,11 @@ namespace BatchRename
     /// <summary>
     /// Interaction logic for EditPresetWindow.xaml
     /// </summary>
-    public partial class EditPresetWindow : Window
+    public partial class EditRulesWindow : Window
     {
         public string newPreset { get; set; }
         public string[] newRules { get; set; }
-        public EditPresetWindow(string PresetPath)
+        public EditRulesWindow(string PresetPath)
         {
             InitializeComponent();
             newPreset = PresetPath;
@@ -36,7 +36,7 @@ namespace BatchRename
 
         private void Okbutton_Click(object sender, RoutedEventArgs e)
         {
-            newRules = textbox.Text.Split('\n');
+            newRules = textbox.Text.Split("\r\n");
             DialogResult = true;
         }
 

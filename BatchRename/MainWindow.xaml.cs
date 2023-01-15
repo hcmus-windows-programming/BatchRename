@@ -291,13 +291,13 @@ namespace BatchRename
             _backup_name = "";
         }
 
-        private void editPresetButton_Click(object sender, RoutedEventArgs e)
+        private void editRulesButton_Click(object sender, RoutedEventArgs e)
         {
             _rules.Clear();
 
             string presetPath = "HrRules.txt";
 
-            var screen = new EditPresetWindow(presetPath);
+            var screen = new EditRulesWindow(presetPath);
             if (screen.ShowDialog() == true)
             {
                 rulesData = screen.newRules;

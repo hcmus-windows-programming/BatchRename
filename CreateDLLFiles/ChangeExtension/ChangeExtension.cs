@@ -55,7 +55,7 @@ namespace ChangeExtension
             }
             else
             {
-                for (int i = 0; i < origin.Length; i++)
+                for (int i = 1; i < origin.Length; i++)
                 {
                     builder.Append(origin[i]);
                 }

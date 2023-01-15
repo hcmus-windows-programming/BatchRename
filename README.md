@@ -6,7 +6,7 @@
 2. 19120590 - Huỳnh Thanh Mỹ
 3. 20120046 - Ngô Xuân Chiến
 4. 20120073 - Văn Lý Hải
-5.
+5. 20120293 - Võ Phi Hùng
 
 ## Các chức năng cơ bản đã hoàn thành
 
@@ -26,4 +26,13 @@
 
 - Let the user see the preview of the result
 
+## Chạy source code
+
+- Yêu cầu sử dụng Visual Studio 2022 và .NET 7.0
+- Mở `DynamicBatchRename.sln` để build lại các file dll (nếu có update rule)
+- Copy các file dll này vào folder `DLLFiles`
+- Mở `BatchRename.sln` và chạy chương trình
+
 ## Video demo
+
+- [Demo BatchRename](https://youtu.be/gl0SbGCeKbg)
